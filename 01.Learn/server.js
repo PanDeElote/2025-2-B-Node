@@ -12,17 +12,14 @@ app.get("/home", (req, res) => {
 });
 
 app.get("/password", (req, res) => {
-  const abc = ["a", "b", "c", "d", "e", "f", "g", "1", "2", "3", "4", "5", "6"];
+  const abc = ["a", "b", "c", "d", "e", "f", "g", "1", "2", "3", "4", "5", "6"]; //Es lo mismo un arreglo con comas que un string = 'ABCDEFGHI3456789' y sigue sirviendo .lenght
   const limiteCaracteres = 6;
-
-  console.log("Antes del for");
   let password = "";
   for (let i = 0; i < limiteCaracteres; i++) {
     console.log("En el for");
-    let random = Math.floor(Math.random() * 14);
+    let random = Math.floor(Math.random() * 13);
     password = password + abc[random];
   }
-  console.log("Afuera del for");
   console.log(password);
 
   res.send(password);
@@ -31,3 +28,22 @@ app.get("/password", (req, res) => {
 app.listen(port, () => {
   console.log("Servidor iniciado");
 });
+
+function codificar(mensaje){
+  const reemplazos = {
+    "a": "4";
+    "e": "3";
+    "i": "1";
+    "o": "0";
+    "u": "_";
+  };
+
+  const invertido = mensaje.split("").reverse().join(""); //SPLIT(te lo vuelve un array SOLO TRABAJA CON STRING), REVERSE(voltea UN ARRAY) y JOIN(Convierte el array a UN STRING) 
+
+  const convertido = 
+    invertido
+      .replace(/[aeiou]/gi,
+        letra => reemplazos[letra.toLowerCase()] || letra);
+
+    
+}
