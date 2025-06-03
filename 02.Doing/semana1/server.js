@@ -37,16 +37,17 @@ let port = 0;
 const portDev = 3000;
 const portQA = 3001;
 const portProd = 3002;
-const args = process.argv;
+const args = process.argv; //Propiedad en Node.js que proporciona acceso a los argumentos de la línea de comandos que se pasan al script Node.js al ejecutarlo. 
+// Es un array donde el primer elemento es la ruta del ejecutable de Node.js, el segundo es la ruta del script, y los siguientes son los argumentos proporcionados por el usuario. 
 
 // Configuración de opciones de línea de comandos usando commander.
 program.option("--dev", "Modo desarrollo");
 program.option("--qa", "Modo QA");
 program.option("--production", "Modo producción");
-program.option("--generate-password <length>", "Genera una contraseña", parseInt);
+program.option("--generate-password <length>", "Genera una contraseña", parseInt); //parseInt convierte un STRING A CADENA DE NÚMMEROS ENTEROS
 
 // Selección del puerto según el entorno especificado.
-program.parse(process.argv);
+program.parse(process.argv); //PARSING significa analizar y convertir un programa en un formato interno que un entorno de ejecución pueda realmente ejecutar
 const options = program.opts();
 
 if (options.dev) { port = portDev; }

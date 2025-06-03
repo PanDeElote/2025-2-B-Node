@@ -31,11 +31,11 @@ app.listen(port, () => {
 
 function codificar(mensaje){
   const reemplazos = {
-    "a": "4";
-    "e": "3";
-    "i": "1";
-    "o": "0";
-    "u": "_";
+    "a": "4",
+    "e": "3",
+    "i": "1",
+    "o": "0",
+    "u": "_"
   };
 
   const invertido = mensaje.split("").reverse().join(""); //SPLIT(te lo vuelve un array SOLO TRABAJA CON STRING), REVERSE(voltea UN ARRAY) y JOIN(Convierte el array a UN STRING) 
