@@ -1,26 +1,29 @@
-//✅ Práctica en clase: Convertir grados Celsius a Fahrenheit usando boxen
-//🎯 Objetivo
-//Crear un módulo reutilizable (temperatura.js) que convierta grados.
-//
-//Usar inquirer para entrada de usuario.
-//
-//Mostrar el resultado con estilo usando boxen.
+/**
+ * Módulo de conversión de temperaturas entre Celsius y Fahrenheit.
+ *
+ * Contiene dos funciones:
+ * - convertCelsiusToFahrenheit: Convierte grados Celsius a Fahrenheit.
+ * - convertFahrenheitToCelsius: Convierte grados Fahrenheit a Celsius.
+ */
 
+/**
+ * Convierte una temperatura de grados Celsius a Fahrenheit.
+ * @param {number} tempeture - Temperatura en grados Celsius.
+ * @returns {number} Temperatura convertida a grados Fahrenheit.
+ */
 export function convertCelsiusToFahrenheit(tempeture) {
   let gF = 0;
-  //TODO convertir ºC a ºF
-  gF = (tempeture * 9 / 5) + 32
-  return gF
+  gF = (tempeture * 9 / 5) + 32;
+  return gF;
 }
 
+/**
+ * Convierte una temperatura de grados Fahrenheit a Celsius.
+ * @param {number} tempeture - Temperatura en grados Fahrenheit.
+ * @returns {number} Temperatura convertida a grados Celsius.
+ */
 export function convertFahrenheitToCelsius(tempeture) {
   let gC = 0;
-  //TODO convertir ºF a ºC
-  gC = (tempeture - 32) * 5 / 9
-  return gC
+  gC = (tempeture - 32) * 5 / 9;
+  return gC;
 }
-
-//module.exports = {
-//convertCelsiusToFahrenheit,
-//convertFahrenheitToCelsius
-//};
