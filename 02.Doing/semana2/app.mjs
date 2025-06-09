@@ -1,3 +1,14 @@
+/**
+ * Aplicación interactiva que solicita al usuario su nombre, edad y color favorito,
+ * genera un mensaje personalizado según la edad y muestra el nombre en arte ASCII
+ * usando figlet y el color seleccionado con chalk.
+ *
+ * - Utiliza inquirer para la entrada de datos por consola.
+ * - Utiliza chalk para colorear la salida.
+ * - Utiliza figlet para mostrar el nombre en arte ASCII.
+ * - Usa la función saludar para generar un mensaje acorde a la edad.
+ */
+
 import inquirer from 'inquirer';
 import chalk from 'chalk';
 import saludar from './saludo.js';
