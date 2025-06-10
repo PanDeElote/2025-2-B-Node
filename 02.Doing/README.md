@@ -1,13 +1,15 @@
-# Ejercicios de NodeJS
+# 02.Doing — Ejercicios Prácticos de NodeJS
 
-Esta carpeta contiene los ejercicios prácticos que se realizarán durante las sesiones presenciales, organizados por semana. Cada ejercicio está diseñado para reforzar los conceptos aprendidos en las prácticas guiadas y aplicar NodeJS en diferentes escenarios del mundo real.
+Esta carpeta contiene los **ejercicios prácticos** que se realizarán durante las sesiones presenciales, organizados por semana. Cada ejercicio está diseñado para reforzar los conceptos aprendidos en las prácticas guiadas y aplicar NodeJS en diferentes escenarios del mundo real.
 
-## Lista de Ejercicios
+## Estructura de Ejercicios
 
-1. **semana1**
-   - [Instrucciones](01/README.md)
-2. **semana2**
-   - [Instrucciones](02/README.md)
+- **semana1**
+  - [Instrucciones](semana1/README.md)
+- **semana2**
+  - [Instrucciones](semana2/README.md)
+- **semana3**
+  - [Instrucciones](semana3/README.md)
 
 > **Nota:** Cada carpeta de ejercicio incluye su propio archivo `README.md` con instrucciones detalladas, requisitos y objetivos específicos.
 
@@ -28,5 +30,7 @@ El objetivo de estos ejercicios es que los alumnos aprendan NodeJS de manera pr�
 ## Recomendaciones
 
 - Realiza los ejercicios de manera individual o en equipo, según se indique en clase.
-- No dudes en consultar la documentación oficial de Node.js y los recursos proporcionados en el curso.
+- Consulta la documentación oficial de Node.js y los recursos proporcionados en el curso.
 - Si tienes dudas, utiliza los canales de comunicación del curso para recibir apoyo.
+
+---

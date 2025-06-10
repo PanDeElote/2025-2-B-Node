@@ -1,13 +1,15 @@
-# Prácticas Libres y Code Challenges de NodeJS
+# 03.Practice — Prácticas Libres y Code Challenges de NodeJS
 
 Esta carpeta está destinada a prácticas libres, retos de código y desafíos adicionales para que puedas reforzar y expandir tus conocimientos en NodeJS de manera autónoma.
 
 ## Lista de Prácticas y Retos
 
 1. **Reto 01**
-   - [Instrucciones](01/README.md)
+   - [Instrucciones](Reto\ 01/README.md)
 2. **Reto 02**
-   - [Instrucciones](02/README.md)
+   - [Instrucciones](Reto\ 02/README.md)
+3. **Reto 03**
+   - [Instrucciones](Reto\ 03/README.md)
 
 > **Nota:** Cada carpeta de reto o práctica incluye su propio archivo `README.md` con instrucciones detalladas, requisitos y objetivos específicos.
 
