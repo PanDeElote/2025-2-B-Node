@@ -1,4 +1,5 @@
 // Importa las funciones para responder en diferentes formatos (HTML, JSON, TXT).
+const { error } = require('console');
 const { responderHTML, responderJSON, responderTXT } = require('./utils/responses');
 // Importa el módulo 'fs' para operaciones de archivos.
 const fs = require('fs');
@@ -55,15 +56,64 @@ function manejarRutas(req, res) {
       if (err) {
         // Si hay error al leer el archivo, responde con error 500 y mensaje en JSON.
         responderJSON(res, { error: 'Error al leer el archivo' }, 500);
-      } else {
+      }else {
         // Si la lectura es exitosa, responde con el contenido del archivo en JSON.
         responderJSON(res, JSON.parse(data), 200);
       }
     });
+  }else if(url.startWith('/equipo/') && method === 'GET'){
+    const nombreBuscado = decodeURIComponent(url.split('/')[2].toLowerCase()); //decodeRIComponent convertir a caracter especial de la url. SPLIT te lo va a mandar en un array dividio por /. Se busca en minúsculas para ser exacto
+    const archivo = path.join(__dirname,'data','equipo.json');
+    fs.readFile(archivo,'utf-8',(err, data) => {
+      if (err){
+        responderJSON(res, { error: 'Error al leer el archivo' }, 500);
+      } else{
+        const equipo = JSON.parse(data);
+        const persona = equipo.find(miembro.nombre.toLowerCase() === nombreBuscado);
+        if(persona){
+          responderHTML.JSON(res,persona,200);
+        }else{
+          responderJSON(res, { error: 'No se encontró a ' + nombreBuscado});
+        }
+      }
+    })
   }
   // Ruta /equipo con método POST (a implementar).
   else if (url === '/equipo' && method === 'POST') {
     // Aquí se podría implementar la lógica para agregar un nuevo miembro al equipo.
+  }else if(url === '/equipo' && method === 'POST'){
+    let cuerpo = '';
+    req.on('data', chunk => {
+      cuerpo += chunk;
+    });
+
+    req.on('end',() => {
+      try{
+        const nuevoMiembro = JSON.parse(cuerpo);
+        if(!nuevoMiembro.nombre || !nuevoMiembro.rol){
+          return responderJSON(res, { error: 'Faltan campos (nombre/rol)'});
+        }
+        fs.readFile(archivo, 'utf-8', (err,data) => {
+          if(err){
+            responderJSON(res, { error: 'Error al leer el archivo'});
+          }else{
+            equipo = JSON.parse(data);
+            equipo.push(nuevoMiembro);
+          }
+        });
+
+        fs.writeFile(archivo, JSON.stringify(equipo), (err) => {
+          if (err){
+            responderJSON(res, { error: 'Error al leer el archivo'});
+          }else{
+            
+          }
+        })
+
+      } catch (err) {
+
+      }
+    })
   }
   // Cualquier otra ruta: responde con texto plano y error 404.
   else {
